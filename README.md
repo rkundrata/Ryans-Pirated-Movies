@@ -11,4 +11,3 @@ $ cd Ryans-Pirated-Movies/
 $ pod repo update; pod install
 $ open PopcornTime.xcworkspace
 ```
-# Ryans-Pirated-Movies
