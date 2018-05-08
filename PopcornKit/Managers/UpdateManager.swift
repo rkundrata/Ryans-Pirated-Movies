@@ -77,10 +77,10 @@ public final class UpdateManager: NSObject {
     
     private func checkForUpdates(_ completion: ((_ success: Bool) -> Void)? = nil) {
         lastVersionCheckPerformedOnDate = Date()
-        Alamofire.request("https://api.github.com/repos/PopcornTimeTV/PopcornTimeTV/releases").validate().responseJSON { (response) in
+        Alamofire.request("https://api.github.com/repos/rkundrata/Ryans-Pirated-Movies/releases").validate().responseJSON { (response) in
             guard let value = response.result.value else { completion?(false); return }
             let responseObject = JSON(value)
-            let sortedReleases = responseObject.flatMap({VersionString($1["tag_name"].string!, $1["published_at"].string!)}).sorted(by: {$0 > $1})
+            let sortedReleases = responseObject.compactMap({VersionString($1["tag_name"].string!, $1["published_at"].string!)}).sorted(by: {$0 > $1})
 
             if let latestRelease = sortedReleases.first,
                 let currentRelease = sortedReleases.filter({$0.buildNumber == self.currentApplicationVersion}).first,
@@ -96,7 +96,7 @@ public final class UpdateManager: NSObject {
                 
                 let isCydiaInstalled = UIApplication.shared.canOpenURL(URL(string: "cydia://")!)
                 
-                alert.addAction(UIAlertAction(title: isCydiaInstalled ? "Update".localized : "OK".localized, style: .default) { _ in
+                alert.addAction(UIAlertAction(title: "Update".localized, style: .default) { _ in
                     if isCydiaInstalled {
                         let url = URL(string: "cydia://package/\(Bundle.main.bundleIdentifier!)")!
                         if #available(iOS 10.0, tvOS 10.0, *) {

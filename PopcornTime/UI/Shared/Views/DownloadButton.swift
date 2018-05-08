@@ -165,7 +165,7 @@ class DownloadButton: UIDownloadButton, UIGestureRecognizerDelegate {
             layers.append(focusedView?.layer)
         #endif
         
-        layers.flatMap({$0}).forEach {
+        layers.compactMap({$0}).forEach {
             if downloadState != .pending && $0.animation(forKey: "Spin") != nil {
                 $0.removeAnimation(forKey: "Spin")
             }
@@ -187,10 +187,10 @@ class DownloadButton: UIDownloadButton, UIGestureRecognizerDelegate {
                 super.invalidateAppearance()
                 setImage(nil, for: .normal)
                 layer.borderWidth = borderWidth
-                setTitle(titleLabel?.text, for: .normal)
+                setTitle(titleLabel?.text?.localized, for: .normal)
             #elseif os(tvOS)
                 setImage(UIImage(named: "Download Progress Start"), for: .normal)
-                setTitle(title, for: .normal)
+                setTitle(title.localized, for: .normal)
             #endif
             [progressView, outlineView].forEach { $0.isHidden = true }
         case .downloading:
@@ -215,7 +215,7 @@ class DownloadButton: UIDownloadButton, UIGestureRecognizerDelegate {
             let image = UIImage(named: "Download Progress Indeterminate")
             imageView?.image != image ? setImage(image, for: .normal) : ()
             
-            layers.flatMap({$0}).forEach {
+            layers.compactMap({$0}).forEach {
                 if $0.animation(forKey: "Spin") == nil {
                     $0.add(self.rotationAnimation, forKey: "Spin")
                 }

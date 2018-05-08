@@ -225,8 +225,8 @@ class EpisodesViewController: UIViewController, UICollectionViewDataSource, UICo
         
         var shouldUpdateView = false
         summaryFocusGuide.preferredFocusEnvironments = [downloadButton, episodeSummaryTextView]
-        topFocusGuide.preferredFocusEnvironments = itemViewController?.visibleButtons.flatMap({$0})
-        environmentsToFocus = [context.nextFocusedView].flatMap({$0})
+        topFocusGuide.preferredFocusEnvironments = itemViewController?.visibleButtons.compactMap({$0})
+        environmentsToFocus = [context.nextFocusedView].compactMap({$0})
         
         
         if let next = context.nextFocusedIndexPath {
@@ -243,7 +243,7 @@ class EpisodesViewController: UIViewController, UICollectionViewDataSource, UICo
             
             let airDateString = DateFormatter.localizedString(from: episode.firstAirDate, dateStyle: .medium, timeStyle: .none)
             
-            let showGenre = episode.show?.genres.first?.localizedCapitalized ?? ""
+            let showGenre = episode.show?.genres.first?.localizedCapitalized.localized ?? ""
             episodeInfoTextView.text = "\(airDateString) \n \(showGenre)"
             
             if context.previouslyFocusedIndexPath == nil // Collection view has just gained focus, expand UI

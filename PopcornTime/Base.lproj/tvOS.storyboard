@@ -196,18 +196,6 @@
                             </view>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem id="UIR-se-NPW">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lOV-1D-qH8">
-                                    <rect key="frame" x="1688" y="58" width="142" height="80"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
-                                    <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                    <state key="normal" title="Genre"/>
-                                    <connections>
-                                        <action selector="showGenres:" destination="JhE-2g-2Pe" eventType="primaryActionTriggered" id="74g-US-slR"/>
-                                    </connections>
-                                </button>
-                            </barButtonItem>
                             <barButtonItem width="145" id="bJ2-1K-7p0">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L77-QY-cXM">
                                     <rect key="frame" x="1522" y="58" width="142" height="80"/>
@@ -220,15 +208,15 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem width="145" id="bew-MK-iTL">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VQD-eX-hIm">
-                                    <rect key="frame" x="1308" y="58" width="190" height="80"/>
+                            <barButtonItem id="UIR-se-NPW">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lOV-1D-qH8">
+                                    <rect key="frame" x="1688" y="58" width="142" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                    <state key="normal" title="Open External"/>
+                                    <state key="normal" title="Genre"/>
                                     <connections>
-                                        <action selector="showExternalTorrentWindow:" destination="JhE-2g-2Pe" eventType="primaryActionTriggered" id="1Vo-ij-bSD"/>
+                                        <action selector="showGenres:" destination="JhE-2g-2Pe" eventType="primaryActionTriggered" id="74g-US-slR"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -286,18 +274,6 @@
                             </view>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem id="GfM-Em-z9g">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ggv-4q-HNn">
-                                    <rect key="frame" x="1688" y="58" width="142" height="80"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
-                                    <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                    <state key="normal" title="Genre"/>
-                                    <connections>
-                                        <action selector="showGenres:" destination="ZFj-vu-dW8" eventType="primaryActionTriggered" id="NzM-kO-Whb"/>
-                                    </connections>
-                                </button>
-                            </barButtonItem>
                             <barButtonItem id="9kS-8U-WGE">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rTI-it-IkT">
                                     <rect key="frame" x="1522" y="58" width="142" height="80"/>
@@ -310,20 +286,17 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem id="Epd-B5-8jd">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VZP-ct-vS1">
-                                    <rect key="frame" x="1298" y="58" width="200" height="80"/>
+                            <barButtonItem id="GfM-Em-z9g">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ggv-4q-HNn">
+                                    <rect key="frame" x="1688" y="58" width="142" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                    <state key="normal" title="Open External"/>
+                                    <state key="normal" title="Genre"/>
                                     <connections>
-                                        <action selector="showExternalTorrentWindow:" destination="ZFj-vu-dW8" eventType="primaryActionTriggered" id="jkv-fJ-Odn"/>
+                                        <action selector="showGenres:" destination="ZFj-vu-dW8" eventType="primaryActionTriggered" id="NzM-kO-Whb"/>
                                     </connections>
                                 </button>
-                                <connections>
-                                    <action selector="showExternalTorrentWindow:" destination="ZFj-vu-dW8" id="xLt-Z7-6WR"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -1032,11 +1005,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eFf-jt-oBp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="74d-b2-gZl">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ky-is-LZ2">
-                                <rect key="frame" x="0.0" y="145" width="1920" height="116"/>
+                                <rect key="frame" x="0.0" y="145" width="1920" height="730"/>
                                 <connections>
                                     <segue destination="9uQ-LP-RR8" kind="embed" identifier="embed" id="qsW-BP-NaD"/>
                                 </connections>
@@ -1176,7 +1149,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qb-cW-DB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController storyboardIdentifier="CollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9uQ-LP-RR8" customClass="CollectionViewController" customModule="PopcornTime" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" id="GGp-VC-hgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="875"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="48" id="dAV-Fa-e8x">
                             <size key="itemSize" width="250" height="460"/>
@@ -2608,35 +2581,35 @@
                         <viewControllerLayoutGuide type="bottom" id="DvR-hI-Jc6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azI-A4-1Ul">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOi-zm-Rjl">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx5-JC-ZxJ">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vbt-Mc-zjR">
-                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogm-Uz-Slq">
-                                            <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NGd-2S-BoP">
-                                                <rect key="frame" x="0.0" y="0.0" width="1920" height="321"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1920" height="935"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ohz-Pg-x0J">
-                                                        <rect key="frame" x="928" y="129" width="64" height="64"/>
+                                                        <rect key="frame" x="928" y="436" width="64" height="64"/>
                                                     </activityIndicatorView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rU-hk-tum">
-                                                        <rect key="frame" x="960" y="119" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="960" y="426" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yT7-ti-YNb">
-                                                        <rect key="frame" x="863" y="325" width="195" height="86"/>
+                                                        <rect key="frame" x="863" y="939" width="195" height="86"/>
                                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                                         <state key="normal" title="Button"/>
                                                     </button>
@@ -3414,7 +3387,7 @@ By using 'Ryan's Pirated Movies' or accessing this site you affirm that you are 
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J2o-2Q-WCT"/>
-        <segue reference="E0s-O3-eSm"/>
+        <segue reference="KnT-1J-TaD"/>
         <segue reference="ocL-5j-FkT"/>
     </inferredMetricsTieBreakers>
 </document>

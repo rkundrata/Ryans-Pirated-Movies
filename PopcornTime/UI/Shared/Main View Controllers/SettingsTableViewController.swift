@@ -84,7 +84,10 @@ class SettingsTableViewController: UITableViewController, TraktManagerDelegate {
                 }
                 cell.detailTextLabel?.text = date
             } else if indexPath.row == 2 {
-                cell.detailTextLabel?.text = Bundle.main.localizedVersion
+                
+                let bundle = Bundle.main
+                let version = [bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString"), bundle.object(forInfoDictionaryKey: "CFBundleVersion")].compactMap({$0 as? String}).joined(separator: ".")
+                cell.detailTextLabel?.text = version
             }
         default:
             break
@@ -102,8 +105,10 @@ class SettingsTableViewController: UITableViewController, TraktManagerDelegate {
             if indexPath.row == 0 {
                 if UIDevice.current.userInterfaceIdiom == .tv {
                     let handler: (UIAlertAction) -> Void = { action in
-                        guard let title = action.title?.replacingOccurrences(of: "%", with: ""),
-                            let value = Double(title) else { return }
+                        guard let title = action.title?.replacingOccurrences(of: "%", with: "").trimmingCharacters(in: .whitespaces),
+                            let value = Double(title) else {
+                                return
+                        }
                         UserDefaults.standard.set(value/100.0, forKey: "themeSongVolume")
                         tableView.reloadData()
                     }
@@ -209,7 +214,7 @@ class SettingsTableViewController: UITableViewController, TraktManagerDelegate {
                 
                 alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
                 
-                for title in UIColor.systemColors.flatMap({$0.localizedString}) {
+                for title in UIColor.systemColors.compactMap({$0.localizedString}) {
                     alertController.addAction(UIAlertAction(title: title, style: .default, handler: handler))
                 }
                 

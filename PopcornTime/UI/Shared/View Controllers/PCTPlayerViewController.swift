@@ -340,9 +340,14 @@ class PCTPlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIGestu
         subtitleSwitcherButton?.isHidden = subtitles.count == 0
         subtitleSwitcherButtonWidthConstraint?.constant = subtitleSwitcherButton?.isHidden == true ? 0 : 24
         
+        if #available(iOS 10.0,tvOS 10.0,*){
+            try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback,mode: AVAudioSessionModeMoviePlayback, options: [.allowBluetoothA2DP,.allowAirPlay])
+        }
+        
+        
         #if os(iOS)
             volumeSliderView?.addSubview(volumeView)
-            if let slider = volumeView.subviews.flatMap({$0 as? UISlider}).first {
+            if let slider = volumeView.subviews.compactMap({$0 as? UISlider}).first {
                 slider.addTarget(self, action: #selector(volumeChanged(forSlider:)), for: .valueChanged)
             }
         #elseif os(tvOS)
@@ -562,33 +567,6 @@ class PCTPlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIGestu
             media = nil
             mediaplayer.delegate = nil
             movieView = nil
-            loadingActivityIndicatorView = nil
-            progressBar = nil
-            
-            // tvOS exclusive
-            dimmerView = nil
-            infoHelperView = nil
-            
-            // iOS exclusive
-            airPlayingView = nil
-            screenshotImageView = nil
-            upNextContainerView = nil
-            
-            playPauseButton = nil
-            subtitleSwitcherButton = nil
-            videoDimensionsButton = nil
-            volumeButton = nil
-            
-            tapOnVideoRecognizer = nil
-            doubleTapToZoomOnVideoRecognizer = nil
-            
-            showVolumeConstraint = nil
-            tooltipView = nil
-            duringScrubbingConstraints = nil
-            finishedScrubbingConstraints = nil
-            subtitleSwitcherButtonWidthConstraint = nil
-            
-            scrubbingSpeedLabel = nil
         }
         
     }

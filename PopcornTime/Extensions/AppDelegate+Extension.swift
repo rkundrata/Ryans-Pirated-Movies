@@ -31,9 +31,11 @@ extension AppDelegate: PCTPlayerViewControllerDelegate, UIViewControllerTransiti
         let alertController = UIAlertController(title: "Choose Quality".localized, message: nil, preferredStyle: style, blurStyle: blurStyle)
         
         for torrent in media.torrents {
-            alertController.addAction(UIAlertAction(title: torrent.quality, style: .default) { _ in
+            let action = UIAlertAction(title: torrent.quality, style: .default) { _ in
                 completion(torrent)
-            })
+            }
+            action.setValue(torrent.health.image.withRenderingMode(.alwaysOriginal), forKey: "image")
+            alertController.addAction(action)
         }
         
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
@@ -98,7 +100,10 @@ extension AppDelegate: PCTPlayerViewControllerDelegate, UIViewControllerTransiti
             alertController.show(animated: true)
         }
         
+        UIApplication.shared.isIdleTimerDisabled = true
         let finishedLoading: (PreloadTorrentViewController, UIViewController) -> Void = { (loadingVc, playerVc) in
+            // Enable here, so playerVc behavior is unchanged.
+            UIApplication.shared.isIdleTimerDisabled = false
             let flag = UIDevice.current.userInterfaceIdiom != .tv
             self.dismiss(animated: flag) {
                 self.present(playerVc, animated: flag)

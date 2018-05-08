@@ -76,7 +76,7 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
                 let runtime = formatter.string(from: TimeInterval(movie.runtime) * 60)
                 let year = movie.year
                 
-                let info = NSMutableAttributedString(string: [runtime, year].flatMap({$0}).joined(separator: "\t"))
+                let info = NSMutableAttributedString(string: [runtime, year].compactMap({$0}).joined(separator: "\t"))
                 attributedString(between: movie.certification, "HD", "CC").forEach({info.append($0)})
                 
                 infoLabel.attributedText = info
@@ -89,10 +89,10 @@ class InfoViewController: UIViewController, UIViewControllerTransitioningDelegat
                 let season = "S\(episode.season):E\(episode.episode)"
                 let date = DateFormatter.localizedString(from: episode.firstAirDate, dateStyle: .medium, timeStyle: .none)
                 let runtime = formatter.string(from: TimeInterval(episode.show?.runtime ?? 0) * 60)
-                let genre = episode.show?.genres.first?.localizedCapitalized
+                let genre = episode.show?.genres.first?.localizedCapitalized.localized
                 
                 
-                let info = NSMutableAttributedString(string: [season, date, runtime, genre].flatMap({$0}).joined(separator: "\t"))
+                let info = NSMutableAttributedString(string: [season, date, runtime, genre].compactMap({$0}).joined(separator: "\t"))
                 attributedString(between: "HD", "CC").forEach({info.append($0)})
                 
                 infoLabel.attributedText = info

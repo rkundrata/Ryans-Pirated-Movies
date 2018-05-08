@@ -9,7 +9,7 @@ import class PopcornTorrent.PTTorrentDownloadManager
 extension ItemViewController: UIViewControllerTransitioningDelegate {
     
     var visibleButtons: [TVButton] {
-        return [trailerButton, playButton, seasonsButton, watchlistButton, watchedButton].flatMap({$0}).filter({$0.superview != nil})
+        return [trailerButton, playButton, seasonsButton, watchlistButton, watchedButton].compactMap({$0}).filter({$0.superview != nil})
     }
     
     var watchlistButtonImage: UIImage? {
@@ -56,7 +56,7 @@ extension ItemViewController: UIViewControllerTransitioningDelegate {
             let runtime = formatter.string(from: TimeInterval(movie.runtime) * 60)
             let year = movie.year
             
-            let subtitle = NSMutableAttributedString(string: [runtime, year].flatMap({$0}).joined(separator: "\t"))
+            let subtitle = NSMutableAttributedString(string: [runtime, year].compactMap({$0}).joined(separator: "\t"))
             attributedString(colored: isDark ? .white : .black, between: movie.certification, "HD", "CC").forEach({subtitle.append($0)})
             
             subtitleLabel.attributedText = subtitle
@@ -82,7 +82,7 @@ extension ItemViewController: UIViewControllerTransitioningDelegate {
                 items.forEach({peopleText.append(NSAttributedString(string: $0 + "\n", attributes: itemAttribtues))})
             }
             
-            if let genre = movie.genres.first?.localizedCapitalized {
+            if let genre = movie.genres.first?.localizedCapitalized.localized {
                 appendSection("Genre".localized.localizedUppercase, [genre])
             }
             
@@ -112,10 +112,10 @@ extension ItemViewController: UIViewControllerTransitioningDelegate {
             
             infoLabel.text = .localizedStringWithFormat("Watch %@ on %@".localized, show.title, show.network ?? "TV")
             
-            let genre = show.genres.first?.localizedCapitalized
+            let genre = show.genres.first?.localizedCapitalized.localized
             let year = show.year
             
-            let subtitle = NSMutableAttributedString(string: [genre, year].flatMap({$0}).joined(separator: "\t"))
+            let subtitle = NSMutableAttributedString(string: [genre, year].compactMap({$0}).joined(separator: "\t"))
             attributedString(colored: isDark ? .white : .black, between: "HD", "CC").forEach({subtitle.append($0)})
             
             subtitleLabel.font = UIFont.systemFont(ofSize: 31, weight: UIFont.Weight.medium)
